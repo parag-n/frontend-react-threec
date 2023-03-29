@@ -1,14 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import ThreeC from './ThreeC';
 import './index.css';
-import App from './App';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+      <ThreeC></ThreeC>
 );
 
 // If you want to start measuring performance in your app, pass a function

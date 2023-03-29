@@ -1,0 +1,36 @@
+.imagediv{
+    background-image: url("./images/space.svg");
+    background-size: auto;
+    background-repeat: no-repeat;
+}
+
+.bannerimg{
+    background-image: url("./images/particles.svg");
+}       
+
+/* Navigation bar class */
+.tcnavbar{
+    background-color: #F2E5E5;
+}
+
+/* Any login form div */
+.logindiv{
+    max-width:25rem;
+    border-radius: 2% 2% 2% 2%;
+    margin: auto;
+    margin-top: 10%;
+}
+
+/* Color classes */
+.one{
+    background-color: #9EA1D4;
+}
+.two{
+    background-color: #F1F7B5;
+}
+.three{
+    background-color: #A8D1D1;
+}
+.four{
+    background-color: #FD8A8A;
+}

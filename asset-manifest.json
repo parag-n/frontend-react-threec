@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/frontend-react-threec/static/css/main.1542bf4c.css",
+    "main.js": "/frontend-react-threec/static/js/main.14667b70.js",
+    "static/js/787.35d77e64.chunk.js": "/frontend-react-threec/static/js/787.35d77e64.chunk.js",
+    "static/media/space.svg": "/frontend-react-threec/static/media/space.c6ff6893e9488a665d5d.svg",
+    "static/media/particles.svg": "/frontend-react-threec/static/media/particles.616f5f6cc9c92caa732b.svg",
+    "index.html": "/frontend-react-threec/index.html",
+    "main.1542bf4c.css.map": "/frontend-react-threec/static/css/main.1542bf4c.css.map",
+    "main.14667b70.js.map": "/frontend-react-threec/static/js/main.14667b70.js.map",
+    "787.35d77e64.chunk.js.map": "/frontend-react-threec/static/js/787.35d77e64.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1542bf4c.css",
+    "static/js/main.14667b70.js"
+  ]
+}

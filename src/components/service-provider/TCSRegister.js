@@ -5,7 +5,8 @@ import { useNavigate } from "react-router-dom";
 
 export default function TCSRegister(props) {
 
-    let handleFailure=props.handleFailure;
+    let handleFailure = props.handleFailure;
+    let setShowLoader = props.setShowLoader;
 
     // let link=useSelector((state)=>{console.log(state.serverlink);return state.serverlink})
     let [categories, setCategories] = useState([]);
@@ -56,21 +57,24 @@ export default function TCSRegister(props) {
     // callback function to send and fetch the data from the server
     let handleSubmit = async (e) => {
 
+        setShowLoader(true);
+
         // prevents the data from being shown in the url
         e.preventDefault();
 
         // checking the consumer details entered by the user
         console.log(SP)
-        
+
         // using axios to post the consumer details
-        try{
-            const response=await axios.post("/serviceprovider/serviceprovider", SP)
+        try {
+            const response = await axios.post("/serviceprovider/serviceprovider", SP)
             console.log(response?.data)
             navigate("/login")
-        }catch(err){
+        } catch (err) {
             console.log(err?.response?.data);
             handleFailure(true);
-            window.scrollTo(0,0);
+            setShowLoader(false);
+            window.scrollTo(0, 0);
         }
 
     }
@@ -128,13 +132,13 @@ export default function TCSRegister(props) {
 
                 <div className="row d-flex flex-inline">
                     {
-                        
+
                         categories.map((cat) => {
                             return <div key={cat.expertiseId} className="form-check form-switch mb-3 col ms-3 mt-2">
-                                <input className="form-check-input" type="checkbox" id={cat.expertiseId}  onChange={handleCategorySelect} />
+                                <input className="form-check-input" type="checkbox" id={cat.expertiseId} onChange={handleCategorySelect} />
                                 <label className="form-check-label" htmlFor={cat.expertiseId}>{cat.name}</label>
                             </div>
-                            
+
                         })
                     }
                 </div>

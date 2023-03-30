@@ -1,7 +1,7 @@
 {
 	"name": "frontend-react-threec",
 	"version": "0.1.0",
-	"homepage":"https://parag-n.githun.io/frontend-react-threec",
+	"homepage": "https://parag-n.github.io/frontend-react-threec",
 	"private": true,
 	"dependencies": {
 		"@reduxjs/toolkit": "^1.9.3",
@@ -17,12 +17,13 @@
 		"react-redux": "^8.0.5",
 		"react-router-dom": "^6.9.0",
 		"react-scripts": "5.0.1",
+		"react-spinners": "^0.13.8",
 		"redux": "^4.2.1",
 		"web-vitals": "^2.1.4"
 	},
 	"scripts": {
-		"predeploy":"npm run build",
-		"deploy":"gh-pages -d build",
+		"predeploy": "npm run build",
+		"deploy": "gh-pages -d build",
 		"start": "react-scripts start",
 		"build": "react-scripts build",
 		"test": "react-scripts test",

@@ -14,13 +14,19 @@ export default function AccountOptions() {
     }
 
     return (
-        <NavDropdown title="Account Options" id="Options" className="btn">
+        <NavDropdown title="Account Options" id="collasible-nav-dropdown" collapseonselect="true">
 
-            <NavDropdown.Item href={"/userdashboard"} >  Your profile</NavDropdown.Item>
+            <NavDropdown.Item href="/frontend-react-threec/userdashboard" >
+                Your profile
+            </NavDropdown.Item>
 
-            <NavDropdown.Item href={"/useraddresses"} >Your address</NavDropdown.Item>
+            <NavDropdown.Item href="/frontend-react-threec/useraddresses">
+                Your addresses
+            </NavDropdown.Item>
 
-            <NavDropdown.Item href={"/userposts"} >Your posts</NavDropdown.Item>
+            <NavDropdown.Item href={"/frontend-react-threec/userposts"} >
+                Your posts
+            </NavDropdown.Item>
 
             <NavDropdown.Divider />
 

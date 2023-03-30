@@ -9,6 +9,7 @@ export default function TCCRegister(props) {
   let navigate = useNavigate();
 
   let handleFailure=props.handleFailure;
+  let setShowLoader=props.setShowLoader;
 
   // keeping the consumer in state
   let [consumer, setConsumer] = useState();
@@ -20,7 +21,9 @@ export default function TCCRegister(props) {
 
   // callback function to send and fetch the data from the server
   let handleSubmit = async (e) => {
-
+    
+    setShowLoader(true);
+    
     // prevents the data from being shown in the url
     e.preventDefault();
 
@@ -36,6 +39,7 @@ export default function TCCRegister(props) {
     } catch (err) {
       console.log(err?.response?.data);
       handleFailure(true);
+      setShowLoader(false);
       window.scrollTo(0,0);
     }
 

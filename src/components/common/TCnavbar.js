@@ -5,32 +5,33 @@ import { Link } from "react-router-dom";
 import AccountOptions from "./AccountOptions";
 
 export default function TCnavbar() {
-
-
     return (
         <div className="tcnavbar">
 
-            <Navbar expand="md">
+            <Navbar expand="md" collapseOnSelect>
 
                 <Container >
 
-                    <Navbar.Brand href="/">
-
+                    <Link
+                        to={"/"}
+                        className="h5 link-dark"
+                        style={{ textDecoration: "none", textAlign: "center" }}
+                    >
                         Connect. Contact. Conduct.
-
-                    </Navbar.Brand>
+                    </Link>
 
                     <Navbar.Toggle />
 
-                    <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
+                    <Navbar.Collapse id="collapseOnSelect" className="justify-content-end">
 
-                            <Nav.Item className="btn"><Link to={"/"}>Home</Link></Nav.Item>
-
-                            <Nav.Item className="btn"><Link to={"/login"}>Login</Link></Nav.Item>
-
-                            <Nav.Item className="btn"> <Link to={"/register"}>Register</Link> </Nav.Item>
-
-                            <AccountOptions></AccountOptions>
+                        <Nav>
+                            <Nav.Link href="/frontend-react-threec">Home</Nav.Link>
+                            <Nav.Link href="/frontend-react-threec/login">Login</Nav.Link>
+                            <Nav.Link href="/frontend-react-threec/register">Register</Nav.Link>
+                            <Nav.Item>
+                                <AccountOptions></AccountOptions>
+                            </Nav.Item>
+                        </Nav>
 
                     </Navbar.Collapse>
 

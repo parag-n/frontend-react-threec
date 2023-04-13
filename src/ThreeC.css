@@ -4,8 +4,9 @@
     background-repeat: no-repeat;
 }
 
-.bannerimg{
+.banner-img{
     background-image: url("./images/particles.svg");
+    background-position: center;
 }       
 
 /* Navigation bar class */
@@ -16,9 +17,8 @@
 /* Any login form div */
 .logindiv{
     max-width:25rem;
-    border-radius: 2% 2% 2% 2%;
-    margin: auto;
-    margin-top: 10%;
+    border-radius: 15px;
+    margin: 3vh auto;
 }
 
 /* Color classes */
@@ -34,3 +34,33 @@
 .four{
     background-color: #FD8A8A;
 }
+
+.tctable{
+    background-color: #ffffffb5;
+    /* border-radius: 15px; */
+    max-width: 25rem;
+    /* width: fit-content; */
+    margin: auto;
+}
+
+.tctable tbody tr{
+    vertical-align: text-top;
+    border-bottom: solid 1px #a7a7a740;
+}
+
+
+.tctable tbody th{
+    background-color: #E4DCCF;
+    /* border-radius: 15px; */
+    padding: 10px 15px 10px 25px;
+}
+.tctable thead th{
+    background-color: #E4DCCF;
+    /* border-radius: 15px; */
+    padding: 10px 15px 10px 25px;
+}
+.tctable tbody td{
+    padding: 10px 15px 10px 25px;
+    width: min-content;
+}
+

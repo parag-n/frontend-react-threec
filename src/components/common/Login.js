@@ -29,7 +29,6 @@ export default function Login() {
 
         try {
             const response = await axios.post("/auth/authenticate", authRequest);
-
             console.log(response?.data)
             localStorage.setItem("bearertoken", `Bearer ${response?.data}`)
             usertype === "consumer" ? navigate("/userdashboard") : navigate("/spdashboard")
@@ -53,8 +52,6 @@ export default function Login() {
                         <strong>Invalid username or password!</strong>
                     </Alert> : <></>}
 
-
-
                     <div className="logindiv bg-secondary">
 
                         <NavPill handlePill={handlePill} />
@@ -67,7 +64,7 @@ export default function Login() {
 
                                 <div className="mb-3 col">
                                     <label htmlFor="username" className="form-label">Username</label>
-                                    <input type="text" className="form-control" name="username" id="username" onChange={handleInput} required />
+                                    <input type="text" className="form-control" name="username" id="username" onChange={handleInput} required autoFocus />
                                 </div>
 
                                 <div className="mb-3 col">

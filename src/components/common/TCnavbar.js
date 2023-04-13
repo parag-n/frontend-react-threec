@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import AccountOptions from "./AccountOptions";
 
 export default function TCnavbar() {
+
     return (
         <div className="tcnavbar">
 

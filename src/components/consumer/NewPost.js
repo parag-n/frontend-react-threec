@@ -41,7 +41,10 @@ export default function NewPost() {
         date
     }
 
-    useEffect(() => {
+    useEffect(() => {;
+
+        let bearertoken=localStorage.getItem("bearertoken")
+        if(bearertoken===null) navigate("/");
         // fetching all the categories as soon as the component is mounted
         MyAxios.get(`/expertise/expertises`)
             .then(
@@ -56,7 +59,13 @@ export default function NewPost() {
 
 
         // fetching all the addresses of the consumer
-        MyAxios.get(`/address/addresses`)
+        MyAxios.get(`/address/addresses`,
+        {
+            headers:{
+                Authorization:bearertoken
+            }
+        }
+        )
             .then(
                 (response) => {
                     console.log(response.data)
@@ -67,7 +76,7 @@ export default function NewPost() {
             .catch(() => {
                 setAddresses([])
             })
-    }, [])
+    }, [navigate])
 
 
 
@@ -103,6 +112,9 @@ export default function NewPost() {
 
         setShowLoader(true);
 
+        let bearertoken=localStorage.getItem("bearertoken")
+        if(bearertoken===null) navigate("/");
+
         e.preventDefault();
 
         // creating the final post object
@@ -110,7 +122,13 @@ export default function NewPost() {
 
         // sending the final post object to the server
         try {
-            const response = await MyAxios.post("/post/post", post)
+            const response = await MyAxios.post("/post/post", post,
+            {
+                headers:{
+                    Authorization:bearertoken
+                }
+            }
+            )
             console.log(response?.data);
             navigate("/userposts");
         } catch (err) {

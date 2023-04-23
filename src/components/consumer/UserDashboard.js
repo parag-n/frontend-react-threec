@@ -12,7 +12,7 @@ export default function UserDashboard() {
 
         let bearertoken = localStorage.getItem("bearertoken")
 
-        // if (bearertoken === null) navigate("/")
+        if (bearertoken === null) navigate("/")
 
         axios.get(`/consumer/consumer`, {
             headers: {
@@ -23,15 +23,42 @@ export default function UserDashboard() {
                 setUser({ ...response?.data })
                 console.log(response.data)
             })
-            .catch(console.log)
+            .catch((err)=>{
+                navigate("/spdashboard")
+                console.log(err.response.data);
+            })
 
     }, [navigate])
 
 
     return (
-        <div className="bannerimg one p-4 text-center">
-            <h1 className="">YOUR PROFILE</h1>
-            {user?.fullname}
+        <div className="banner-img one p-4">
+            <h1 className="text-center">YOUR PROFILE</h1>
+            <table className="tctable">
+                <tbody>
+                    <tr>
+                        <th>Name</th><td>{user?.fullname}</td>
+                    </tr>
+                    <tr>
+                        <th>Phone</th><td>{user?.phone}</td>
+                    </tr>
+                    <tr>
+                        <th>Email</th><td>{user?.email}</td>
+                    </tr>
+                    <tr>
+                        <th>Role</th><td>{user?.role}</td>
+                    </tr>
+                    <tr>
+                        <th>Userame</th><td>{user?.username}</td>
+                    </tr>
+                    <tr>
+                        <th>Dummy Field</th><td>Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</td>
+                    </tr>
+                    <tr>
+                        <th>Password</th><td>********</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     )
 }

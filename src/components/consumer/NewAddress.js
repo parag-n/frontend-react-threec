@@ -30,7 +30,16 @@ export default function NewAddress() {
         console.log(address);
 
         try {
-            const response = await MyAxios.post("/address/address", address)
+            let bearertoken=localStorage.getItem("bearertoken");
+            if(bearertoken===null) navigate("/");
+
+            const response = await MyAxios.post("/address/address", address,
+                {
+                    headers:{
+                        Authorization:bearertoken
+                    }
+                }
+            )
 
             console.log(response?.data)
             navigate("/useraddresses");

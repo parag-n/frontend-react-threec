@@ -1,18 +1,18 @@
 import { useEffect, useState } from "react";
-import { BsFillPlusSquareFill } from "react-icons/bs";
 import { Link, useNavigate } from "react-router-dom";
 import MyAxios from "../../custom-config/MyAxios";
 
-export default function UserPosts() {
-    let navigate=useNavigate();
+export default function SpPosts() {
 
-    let [posts, setPosts]=useState([]);
+    let navigate = useNavigate();
+
+    let [posts, setPosts] = useState([]);
 
     useEffect(() => {
         let bearertoken = localStorage.getItem("bearertoken");
-        if(bearertoken===null) navigate("/");
+        if (bearertoken === null) navigate("/");
 
-        MyAxios.get('/post/posts/consumer', {
+        MyAxios.get('/post/posts/serviceprovider', {
             headers: {
                 Authorization: bearertoken
             }
@@ -28,13 +28,13 @@ export default function UserPosts() {
     }, [navigate])
 
     return (
-        <div className="four">
-
+        <div>
             <h1 className="text-center">YOUR POSTS</h1>
 
             <br />
+
             <div className="logindiv p-3 bg-secondary position-relative">
-                <Link to={"/newpost"}  className="position-absolute top-0 start-50 translate-middle btn btn-success">ADD NEW <BsFillPlusSquareFill color="#fff" size="2em" className="ms-2" /></Link>
+                <Link className="btn btn-dark" to={"/spdashboard"}>Back</Link>
                 {
                     posts.map((post) => {
                         return <div key={post.postId} className="card my-2">
@@ -51,7 +51,7 @@ export default function UserPosts() {
                                     <br />
                                     {post.status}
                                 </p>
-                                <Link to={"/showbids"} state={post.postId} className="btn btn-success">Show bids</Link>
+                                <Link to={"/spbidonpost"} state={post.postId} className="btn btn-success">Bid now</Link>
                             </div>
                         </div>
                     })

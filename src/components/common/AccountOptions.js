@@ -1,5 +1,5 @@
 import { NavDropdown } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function AccountOptions() {
 
@@ -14,25 +14,30 @@ export default function AccountOptions() {
     }
 
     return (
-        <NavDropdown title="Account Options" id="collasible-nav-dropdown" collapseonselect="true">
+        <NavDropdown title="Account Options" 
+        id="collasible-nav-dropdown" 
+        collapseonselect="true"
+        className="align-items-center">
 
-            <NavDropdown.Item href="/frontend-react-threec/userdashboard" >
+            <Link className="btn btn-primary mb-2" to="/userdashboard" >
                 Your profile
-            </NavDropdown.Item>
+            </Link>
 
-            <NavDropdown.Item href="/frontend-react-threec/useraddresses">
+            <br></br>
+            <Link className="btn btn-primary mb-2" to="/useraddresses">
                 Your addresses
-            </NavDropdown.Item>
+            </Link>
 
-            <NavDropdown.Item href={"/frontend-react-threec/userposts"} >
+            <br></br>
+            <Link className="btn btn-primary" to={"/userposts"} >
                 Your posts
-            </NavDropdown.Item>
+            </Link>
 
             <NavDropdown.Divider />
 
-            <NavDropdown.Item onClick={handleLogout} >
+            <button onClick={handleLogout} >
                 Logout
-            </NavDropdown.Item>
+            </button>
 
         </NavDropdown>
     )

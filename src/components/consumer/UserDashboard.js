@@ -24,8 +24,8 @@ export default function UserDashboard() {
                 console.log(response.data)
             })
             .catch((err)=>{
+                navigate("/spdashboard")
                 console.log(err.response.data);
-                navigate("/")
             })
 
     }, [navigate])

@@ -20,11 +20,11 @@ export default function SpDashboard(){
         })
             .then((response) => {
                 setUser({ ...response?.data })
-                console.log(response.data)
+                // console.log(response.data)
             })
             .catch((err)=>{
-                console.log(err.response.data);
                 navigate("/")
+                console.log(err.response.data);
             })
 
     }, [navigate])
@@ -58,8 +58,8 @@ export default function SpDashboard(){
                 </tbody>
             </table>
             <div className="d-flex justify-content-center">
-                <Link to={"/spposts"} className="btn btn-dark m-1"> Show my posts</Link>
-                <Link to={"/spposts"} className="btn btn-dark m-1"> Show my bids</Link>
+                <Link to={"/spposts"} className="btn btn-dark m-1"> Show Active Posts</Link>
+                <Link to={"/spbids"} className="btn btn-dark m-1"> Show my bids</Link>
                 <Link to={"/spposts"} className="btn btn-dark m-1"> Show my works</Link>
             </div>
         </div>

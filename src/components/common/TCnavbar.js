@@ -26,9 +26,9 @@ export default function TCnavbar() {
                     <Navbar.Collapse id="collapseOnSelect" className="justify-content-end">
 
                         <Nav>
-                            <Nav.Link href="/frontend-react-threec">Home</Nav.Link>
-                            <Nav.Link href="/frontend-react-threec/login">Login</Nav.Link>
-                            <Nav.Link href="/frontend-react-threec/register">Register</Nav.Link>
+                            <Link to="/">Home</Link>
+                            <Link to="/login">Login</Link>
+                            <Link to="/register">Register</Link>
                             <Nav.Item>
                                 <AccountOptions></AccountOptions>
                             </Nav.Item>

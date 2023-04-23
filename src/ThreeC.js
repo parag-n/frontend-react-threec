@@ -1,20 +1,20 @@
-import { BrowserRouter } from "react-router-dom";
 import "./ThreeC.css";
 import TCnavbar from "./components/common/TCnavbar"
 import TCroutes from "./components/common/TCRoutes"
+import { HashRouter } from "react-router-dom";
 
 export default function ThreeC() {
 
     return (
         <div className="threec">
             
-            <BrowserRouter>
+            <HashRouter>
 
                 <TCnavbar />
             
                 <TCroutes />
 
-            </BrowserRouter>
+            </HashRouter>
 
         </div>
     )
